@@ -4,7 +4,7 @@ services:
   web:
     container_name: web
     build:
-      context: ./docker/apache2
+      context: ./docker/$PHP_VERSION/apache2
       dockerfile: Dockerfile
     restart: always
     ports:
