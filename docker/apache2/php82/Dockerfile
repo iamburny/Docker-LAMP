@@ -4,7 +4,7 @@ RUN apt update -y && apt upgrade -y;
 RUN apt install -y libxml2-dev libpng-dev curl libcurl4-gnutls-dev libxslt-dev libzip-dev libtidy-dev
 RUN a2enmod ssl actions headers alias rewrite expires
 RUN a2ensite default-ssl
-RUN docker-php-ext-install -j$(nproc) xml xmlrpc opcache bcmath mbstring gd curl xsl intl zip tidy mysqli pdo pdo_mysql
+RUN docker-php-ext-install -j$(nproc) xml opcache bcmath gd curl xsl intl zip tidy mysqli pdo pdo_mysql
 
 RUN pecl install xdebug-3.2.0 \
     && docker-php-ext-enable xdebug
